@@ -1,17 +1,9 @@
-import {useEffect, useState} from "react"
+import useWindowWidth from "../../hooks/useWindowWidth"
 
 import './style.scss';
 
 function PlayerStats({player}: {player: string}) {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWidthChange)
-  })
-
-  const handleWidthChange = () => {
-    setScreenWidth(window.innerWidth)
-  }
+  const screenWidth = useWindowWidth()
 
   return (
     <div className={`PlayerStats PlayerStats--${player}`}>
