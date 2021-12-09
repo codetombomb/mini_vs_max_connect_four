@@ -1,0 +1,13 @@
+@import "../../assets/globals";
+
+.Board {
+  background-color: $white;
+  display: flex;
+  padding: 0 5%;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  max-height: 600px;
+  border-radius: $border-radius-large;
+  box-shadow: $box-shadow-medium;
+}

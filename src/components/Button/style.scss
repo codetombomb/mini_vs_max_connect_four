@@ -1,0 +1,16 @@
+@import "../../assets/globals";
+
+.Button {
+  border-radius: $border-radius-button;
+  border-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: $light-gray;
+  color: $dark-gray;
+  box-shadow: $box-shadow-small;
+  &:hover {
+    background-color: $medium-gray;
+  }
+}

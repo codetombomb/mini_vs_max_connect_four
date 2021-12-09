@@ -1,0 +1,14 @@
+@import "../../assets/globals";
+
+.ControlPanel {
+  margin-left: 50px;
+  width: 297px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
