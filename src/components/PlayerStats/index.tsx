@@ -1,16 +1,20 @@
-// import useWindowWidth from "../../hooks/useWindowWidth"
-// import usePageTitleClicked from "../../hooks/usePageTitleClicked";
-
 import './style.scss';
 
-function PlayerStats({player}: {player: string}) {
-  // const screenWidth = useWindowWidth()
-  // const [clicked, handleClick] = usePageTitleClicked()
+function PlayerStats({player, currentPlayer, turns}: any) {
 
   return (
     <div className={`PlayerStats PlayerStats--${player}`}>
-      {/* {screenWidth}
-      <button onClick={handleClick}>{clicked}</button> */}
+      {currentPlayer
+        ? <span className="PlayerStats__current-player-indicator">{currentPlayer ? `${player}'s turn` : null}</span>
+        : null
+      }
+      {turns !== undefined
+        ? <>
+            <span className="PlayerStats__turn-indicator-header">Turns</span>
+            <span className="PlayerStats__turn-indicator">{turns}</span>
+          </>
+        : null
+      }
     </div>
   );
 }

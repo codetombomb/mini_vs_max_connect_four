@@ -47,7 +47,7 @@ function PlaySpace() {
   return (
     <div className="PlaySpace">
       <Board spaces={spaces} handleColumnClick={handleColumnClick}/>
-      <ControlPanel />
+      <ControlPanel turns={turns} currentPlayer={currentPlayer}/>
     </div>
   );
 }
