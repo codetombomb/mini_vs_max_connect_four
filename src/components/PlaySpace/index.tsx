@@ -46,7 +46,7 @@ function PlaySpace() {
 
   return (
     <div className="PlaySpace">
-      <Board />
+      <Board spaces={spaces} handleColumnClick={handleColumnClick}/>
       <ControlPanel />
     </div>
   );
