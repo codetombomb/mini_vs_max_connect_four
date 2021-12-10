@@ -2,10 +2,10 @@ import Space from "../Space"
 
 import './style.scss';
 
-function Column({id, spaces}: {id: number, spaces:string[]}) {
+function Column({id, spaces, handleClick}:{id: number; spaces: string[]; handleClick: any}) {
 
   return (
-    <div className="Column" id={`col-${id}`}>
+    <div className="Column" id={`col-${id}`} onClick={handleClick}>
       <div className="Column__played">
         <Space player={spaces[5]}/>
         <Space player={spaces[4]}/>
