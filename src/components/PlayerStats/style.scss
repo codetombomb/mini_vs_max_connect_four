@@ -6,19 +6,19 @@
   height: 100px;
   margin-bottom: 30px;
   box-shadow: $box-shadow-medium;
-  background-color: $white;
+  background-color: var(--white);
 
   &--player-1 {
-    background-color: $player-1-blue;
+    background-color: vav(--player-1-color);
   }
 
   &--player-2 {
-    background-color: $player-2-red;
+    background-color: vav(--player-2-color);
   }
 
   &__current-player-indicator {
-    color: $white;
-    border-bottom: 1px solid $white;
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
     display: block;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -27,8 +27,8 @@
   }
 
   &__turn-indicator-header {
-    color: $dark-gray;
-    border-bottom: 1px solid $dark-gray;
+    color: var(--dark-gray);
+    border-bottom: 1px solid var(--dark-gray);
     display: block;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -37,7 +37,7 @@
   }
 
   &__turn-indicator {
-    color: $dark-gray;
+    color: var(--dark-gray);
     display: block;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;

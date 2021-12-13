@@ -11,12 +11,12 @@
   }
 
   &--player-1 {
-    background-color: $player-1-blue;
+    background-color: vav(--player-1-color);
     box-shadow: $box-shadow-small;
   }
 
   &--player-2 {
-    background-color: $player-2-red;
+    background-color: vav(--player-2-color);
     box-shadow: $box-shadow-small;
   }
 }

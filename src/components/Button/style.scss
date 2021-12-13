@@ -7,10 +7,10 @@
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: $light-gray;
-  color: $dark-gray;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
   box-shadow: $box-shadow-small;
   &:hover {
-    background-color: $medium-gray;
+    background-color: var(--medium-gray);
   }
 }
