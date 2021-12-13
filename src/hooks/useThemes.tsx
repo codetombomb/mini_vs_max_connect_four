@@ -1,104 +1,44 @@
 import { useState , useEffect} from "react";
 
-interface CSSVariable {
-    name: string;
-    value: string;
-}
-
-// const darkCyan: CSSVariable[] = [
-//     {
-//         name: "--white",
-//         value: "#fcfbf3"
-//     },
-//     {
-//         name: "--light-gray",
-//         value: "#efe8d8"
-//     },
-//     {
-//         name: "--medium-gray",
-//         value: "#dfd8c9"
-//     },
-//         {
-//         name: "--dark-gray",
-//         value: "#3f3c36"
-//     },
-//     {
-//         name: "--player-1-color",
-//         value: "#167c80"
-//     },
-//     {
-//         name: "--player-2-color",
-//         value: "#e54b4b"
-//     }
-// ]
-
-const pictonBlue: CSSVariable[] = [
-    {
-        name: "--white",
-        value: "#ffffff"
-    },
-    {
-        name: "--light-gray",
-        value: "#f3f3f3"
-    },
-    {
-        name: "--medium-gray",
-        value: "#e2e2e2"
-    },
-        {
-        name: "--dark-gray",
-        value: "#434343"
-    },
-    {
-        name: "--player-1-color",
-        value: "#499eeb"
-    },
-    {
-        name: "--player-2-color",
-        value: "#eb2d53"
-    }
-]
+import themes from "../assets/themes"
 
 function useThemes() {
 
     // debugger
-    const [theme, setTheme] = useState("blue")
-
-    function logClick() {
-        console.log(`CLICKED IT!, state ${theme}`)
-    }
+    const [theme, setTheme] = useState(themes[0])
 
     useEffect(() => {
         const { style } = document.documentElement
-        pictonBlue.forEach(variable => {
-            style.setProperty(variable.name, variable.value)
-        })
+        const themeVariables = theme[1]
+        for (const [cssVariable, hexColor] of Object.entries(themeVariables)) {
+            style.setProperty(cssVariable, hexColor)
+        }
 
         // Sets the theme variables back to an empty string before re-running or unmounting
         return () => {
-            pictonBlue.forEach(variable => {
-                style.setProperty(variable.name, "")
-            })
-            debugger
-            }
+            for (const [cssVariable, hexColor] of Object.entries(themeVariables)) {
+            style.setProperty(cssVariable, "")
+        }}
     })
 
     // break statements needed for fallthrough. I thought a switch will stop after it finds a case?
-    // function changeTheme(themeName: string) {
-    //     switch (themeName) {
-    //         case "pictonBlue":
-    //             setTheme(pictonBlue)
-    //             break
-    //         case "darkCyan":
-    //             setTheme(darkCyan)
-    //             break
-    //         default:
-    //             setTheme(pictonBlue)
-    //     }
-    // }
+    function changeTheme(themeName: string) {
+        switch (themeName) {
+            case "darkCyan":
+                setTheme(themes[0])
+                break
+            case "pictonBlue":
+                setTheme(themes[1])
+                break
+            case "neonGarden":
+                setTheme(themes[2])
+                break
+            default:
+                setTheme(themes[0])
+        }
+    }
 
-    // return changeTheme
-    // return logClick
+    return changeTheme
 }
 
 export default useThemes

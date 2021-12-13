@@ -1,6 +1,6 @@
 import PlaySpace from './components/PlaySpace'
 
-import './assets/css_variables.scss';
+import './assets/_colors.scss';
 
 function App() {
   return (
