@@ -1,10 +1,26 @@
 // COLORS
-$white: #ffffff;
-$light-gray: #f3f3f3;
-$medium-gray: #e2e2e2;
-$dark-gray: #434343;
-$player-1-blue: #499eeb;
-$player-2-red: #eb2d53;
+// $white: #ffffff;
+// $light-gray: #f3f3f3;
+// $medium-gray: #e2e2e2;
+// $dark-gray: #434343;
+// $player-1-blue: #499eeb;
+// $player-2-red: #eb2d53;
+
+$white: #fcfbf3;
+$light-gray: #efe8d8;
+$medium-gray: #dfd8c9;
+$dark-gray: #3f3c36;
+$player-1-blue: #167c80;
+$player-2-red: #e54b4b;
+:root {
+  --white: #fcfbf3;
+  --light-gray: #efe8d8;
+  --medium-gray: #dfd8c9;
+  --dark-gray: #3f3c36;
+  --player-1-color: #167c80;
+  --player-2-color: #e54b4b;
+}
+
 // Can't get this working?
 $dark-overlay: hsla(0, 0%, 0%, 0.5);
 

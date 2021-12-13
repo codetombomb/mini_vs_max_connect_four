@@ -5,6 +5,8 @@ import ControlPanel from '../ControlPanel'
 
 import './style.scss';
 
+import useTheme from "../../hooks/useThemes"
+
 function PlaySpace() {
     // I need to fill first to be able to map over it.
   // If I pass the array directly in to .fill, then each array references the same array.
@@ -43,9 +45,14 @@ function PlaySpace() {
     }
   }
 
+  // THEMES
+  const usePictonBlue = () => {useTheme("pictonBlue")}
+  // const darkCyan = () => {useTheme("darkCyan")}
 
   return (
-    <div className="PlaySpace">
+    <div className="PlaySpace mint-theme">
+      <div onClick={usePictonBlue}>pictonBlue</div>
+      {/* <div onClick={darkCyan}>darkCyan</div> */}
       <Board spaces={spaces} handleColumnClick={handleColumnClick}/>
       <ControlPanel turns={turns} currentPlayer={currentPlayer}/>
     </div>
