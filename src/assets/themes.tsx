@@ -41,6 +41,4 @@ const themes: CSSTheme[] = [
     }]
 ]
 
-// I have to manually deconstruct everywhere, why can't I just bundle this?
-// export {darkCyan, pictonBlue, neonGarden}
 export default themes

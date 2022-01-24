@@ -2,7 +2,13 @@ import Space from "../Space"
 
 import './style.scss';
 
-function Column({id, spaces, handleClick}:{id: number; spaces: string[]; handleClick: any}) {
+interface ColumnProps {
+  id: number;
+  spaces: string[];
+  handleClick: () => void;
+}
+
+function Column({id, spaces, handleClick}:ColumnProps) {
 
   return (
     <div className="Column" id={`col-${id}`} onClick={handleClick}>

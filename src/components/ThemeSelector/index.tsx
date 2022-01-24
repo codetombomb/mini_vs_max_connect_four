@@ -1,13 +1,11 @@
-import './style.scss';
-
 import useThemes from "../../hooks/useThemes"
+
 import themes from '../../assets/themes';
-import './style.scss';
 import ThemeButton from "../ThemeButton"
 
+import './style.scss';
 
 function ThemeSelector() {
-
     const handleClick = useThemes()
 
     const renderThemes = themes.map(theme => {

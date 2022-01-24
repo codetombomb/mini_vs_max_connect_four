@@ -1,7 +1,12 @@
 import './style.scss';
 
-function PlayerStats({player, currentPlayer, turns}: any) {
+interface PlayerStatsProps {
+  player?: string;
+  currentPlayer?: boolean;
+  turns?: number;
+}
 
+function PlayerStats({player, currentPlayer, turns}: PlayerStatsProps) {
   return (
     <div className={`PlayerStats PlayerStats--${player}`}>
       {currentPlayer

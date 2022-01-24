@@ -2,10 +2,14 @@ import Column from "../Column"
 
 import './style.scss';
 
-function Board({spaces, handleColumnClick}:{spaces: string[][], handleColumnClick: any}) {
+interface BoardProps {
+  spaces: string[][];
+  handleColumnClick: (num: number) => void;
+}
+
+function Board({spaces, handleColumnClick}:BoardProps) {
   
   return (
-    <>
     <div className="Board">
       <Column id={1} spaces={spaces[0]} handleClick={() => handleColumnClick(1)}/>
       <Column id={2} spaces={spaces[1]} handleClick={() => handleColumnClick(2)}/>
@@ -15,7 +19,6 @@ function Board({spaces, handleColumnClick}:{spaces: string[][], handleColumnClic
       <Column id={6} spaces={spaces[5]} handleClick={() => handleColumnClick(6)}/>
       <Column id={7} spaces={spaces[6]} handleClick={() => handleColumnClick(7)}/>
     </div>
-    </>
   );
 }
 

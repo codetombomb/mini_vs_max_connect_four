@@ -1,6 +1,10 @@
 import './style.scss';
 
-function Button({text}: {text: string}) {
+interface ButtonProps {
+  text: string;
+}
+
+function Button({text}: ButtonProps) {
   return (
     <button className="Button">{text}</button>
   );

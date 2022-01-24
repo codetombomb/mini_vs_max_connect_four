@@ -1,13 +1,11 @@
 import { useState , useEffect} from "react";
-
 import themes from "../assets/themes"
 
 function useThemes() {
-
-    // debugger
     const [theme, setTheme] = useState(themes[0])
 
     useEffect(() => {
+        // Editing the DOM directly might be bad, should I use useRef?
         const { style } = document.documentElement
         const themeVariables = theme[1]
         for (const [cssVariable, hexColor] of Object.entries(themeVariables)) {
@@ -16,12 +14,13 @@ function useThemes() {
 
         // Sets the theme variables back to an empty string before re-running or unmounting
         return () => {
-            for (const [cssVariable, hexColor] of Object.entries(themeVariables)) {
+            for (const [cssVariable] of Object.entries(themeVariables)) {
             style.setProperty(cssVariable, "")
         }}
     })
 
-    // break statements needed for fallthrough. I thought a switch will stop after it finds a case?
+    // ES Lint complains about fallthrogh if I don't manually tell switch to break.
+    // Is there a better alternative to verbose switch statements?
     function changeTheme(themeName: string) {
         switch (themeName) {
             case "darkCyan":

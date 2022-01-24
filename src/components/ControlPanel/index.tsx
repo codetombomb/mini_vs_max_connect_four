@@ -2,13 +2,14 @@ import PlayerStats from '../PlayerStats'
 import Button from '../Button'
 import ThemeSelector from '../ThemeSelector'
 
-
 import './style.scss';
 
-function ControlPanel({turns, currentPlayer}:{turns:number; currentPlayer:string}) {
+interface ControlPanelProps {
+  turns: number;
+  currentPlayer: string;
+}
 
-
-
+function ControlPanel({turns, currentPlayer}:ControlPanelProps) {
   return (
     <div className="ControlPanel">
       <div className="ControlPanel__info">
